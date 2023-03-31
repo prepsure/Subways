@@ -31,11 +31,10 @@ public class TrainMovement : MonoBehaviour
             _tOnCurrentCurve = Mathf.Clamp(_tOnCurrentCurve, 0, 1);
             PositionOnCurve(_currentCurve, _tOnCurrentCurve, TravelDirection);
 
-            // TODO change t and dir to the right ones
-            _currentCurve = FindNextCurveCandidates()[0];
+            // TODO change curve candidate based on player controls
+            _currentCurve = PickRandom(FindNextCurveCandidates());
             TravelDirection = GetTravelDirectionFromClosestEndPoint(_currentCurve);
             _tOnCurrentCurve = OneAround0To0To1(-TravelDirection);
-            
         }
 
         PositionOnCurve(_currentCurve, _tOnCurrentCurve, TravelDirection);
@@ -80,5 +79,10 @@ public class TrainMovement : MonoBehaviour
     float OneAround0To0To1(float t)
     {
         return t / 2 + 0.5f;
+    }
+
+    T PickRandom<T>(List<T> list)
+    {
+        return list[Random.Range(0, list.Count())];
     }
 }
