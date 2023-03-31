@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BezierCurve : MonoBehaviour {
+public class BezierCurve : MonoBehaviour, ICurveBase {
 
 	public Vector3[] points;
 	

@@ -2,6 +2,19 @@
 
 public static class Bezier {
 
+	public static float GetLength(ICurveBase curve)
+    {
+		const float INCREMENT = 0.01f;
+		float len = 0;
+
+		for (float t = 0; t < 1; t += INCREMENT)
+        {
+			len += Vector3.Magnitude(curve.GetPoint(t + INCREMENT) - curve.GetPoint(t));
+        }
+
+		return len;
+    }
+
 	public static Vector3 GetPoint (Vector3 p0, Vector3 p1, Vector3 p2, float t) {
 		t = Mathf.Clamp01(t);
 		float oneMinusT = 1f - t;

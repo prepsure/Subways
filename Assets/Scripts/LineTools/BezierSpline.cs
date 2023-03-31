@@ -8,7 +8,7 @@ public enum BezierControlPointMode
 	Mirrored
 }
 
-public class BezierSpline : MonoBehaviour {
+public class BezierSpline : MonoBehaviour, ICurveBase {
 
 	[SerializeField]
 	private Vector3[] points;
