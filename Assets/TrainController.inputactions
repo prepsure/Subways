@@ -1,0 +1,45 @@
+{
+    "name": "TrainController",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "63c4e2dd-28f8-48c6-be7a-ab3a8935fa42",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "59dcac1d-9869-49e4-9ad3-5652c750e1c2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "77a7fae1-a8bc-4259-8d5a-fd69d548f8f7",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36cec8f9-4332-4e7e-b424-7945082138ce",
+                    "path": "<Joystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
