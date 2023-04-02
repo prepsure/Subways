@@ -11,11 +11,14 @@ namespace Assets.Scripts
             Debug.Log(gameObject.GetHashCode());
         }
 
-
-        // Use this for initialization
-        void Update()
+        void OnSlowdown1(InputValue val)
         {
-            
+            Debug.Log(val.Get<float>());
+        }
+
+        void OnSlowdown2(InputValue val)
+        {
+            Debug.Log(val.Get<float>());
         }
     }
 }
