@@ -155,7 +155,7 @@ MonoBehaviour:
   points:
   - {x: -2, y: 0, z: 0}
   - {x: -2, y: 0, z: 2}
-  - {x: -4.176134, y: 0, z: 4.1798034}
+  - {x: -4.9017253, y: 0, z: 4.1798034}
   - {x: 0, y: 0, z: 2}
   modes: 0000000000000000
   loop: 0
@@ -184,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 536279661}
   - component: {fileID: 536279660}
+  - component: {fileID: 536279662}
   m_Layer: 0
   m_Name: Track (2)
   m_TagString: Untagged
@@ -225,6 +226,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &536279662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536279659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f24578fb99c5a945be19fd158c9813c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 1661766277}
+  frequency: 0
+  lookForward: 1
+  items:
+  - {fileID: 400000, guid: 07bc9122086c6428c8abcca8696763ac, type: 3}
 --- !u!1 &702857158
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,8 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {x: -2, y: 0, z: 0}
-  - {x: 1.3123546, y: 0, z: 6.218872}
-  - {x: -3.2892962, y: 0, z: 4.7055874}
+  - {x: -7.29492, y: 0, z: 0.18663168}
+  - {x: -3.2892962, y: 0, z: 8.234452}
   - {x: 0, y: 0, z: 2}
   modes: 0000000000000000
   loop: 0
@@ -401,10 +419,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {x: -2, y: 0, z: 0}
-  - {x: -2.5155344, y: 0, z: 7.8561993}
-  - {x: -1.2893345, y: 0, z: 16.721474}
+  - {x: -16.502825, y: 0, z: 0.55052567}
+  - {x: -2.6636791, y: 0, z: 12.253525}
+  - {x: 3.8854113, y: 0, z: 10.42976}
+  - {x: 10.434502, y: 0, z: 8.605995}
+  - {x: 9.100306, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
-  modes: 0000000000000000
+  modes: 000000000200000000000000
   loop: 0
 --- !u!4 &800986416
 Transform:
@@ -596,14 +617,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1661766276
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661766278}
   - component: {fileID: 1661766277}
+  - component: {fileID: 1661766279}
   m_Layer: 0
   m_Name: Track (1)
   m_TagString: Untagged
@@ -635,8 +657,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {x: -2, y: 0, z: 0}
-  - {x: -2, y: 0, z: 2}
-  - {x: -1.2490458, y: 0, z: 6.2324367}
+  - {x: -20.955011, y: 0, z: 2}
+  - {x: -1.2490458, y: 0, z: 7.000929}
   - {x: 0, y: 0, z: 2}
   modes: 0000000000000000
   loop: 0
@@ -655,3 +677,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661766279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661766276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f24578fb99c5a945be19fd158c9813c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 1661766277}
+  frequency: 0
+  lookForward: 1
+  items:
+  - {fileID: 400000, guid: 07bc9122086c6428c8abcca8696763ac, type: 3}

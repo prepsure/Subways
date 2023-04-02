@@ -15,6 +15,34 @@ public static class Bezier {
 		return len;
     }
 
+	public static float[] MakeDistanceToTMap(ICurveBase curve)
+	{
+		float curveLen = GetLength(curve);
+		int totalSlots = (int)Mathf.Ceil(curveLen * ICurveBase.SEGMENTS_PER_UNIT);
+		float[] distToTMap = new float[totalSlots];
+
+		float t = 0;
+		float foundD = 0;
+
+		for (int slot = 0; slot < totalSlots; slot++)
+		{
+			float d = slot / (float)totalSlots * curveLen;
+
+			while (foundD < d)
+            {
+				Vector3 v1 = curve.GetPoint(t);
+				Vector3 v2 = curve.GetPoint(t + 1f/totalSlots);
+				foundD += (v1 - v2).magnitude;
+
+				t += 1f / totalSlots;
+			}
+
+			distToTMap[slot] = t;
+		}
+
+		return distToTMap;
+	}
+
 	public static Vector3 GetPoint (Vector3 p0, Vector3 p1, Vector3 p2, float t) {
 		t = Mathf.Clamp01(t);
 		float oneMinusT = 1f - t;
