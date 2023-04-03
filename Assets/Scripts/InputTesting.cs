@@ -2,23 +2,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Assets.Scripts
+public class InputTesting : MonoBehaviour
 {
-    public class InputTesting : MonoBehaviour
+    private float _speedMultiplier1 = 1;
+    private float _speedMultiplier2 = 1;
+    public float SpeedMultiplier
     {
-        void OnMove(InputValue val)
+        get
         {
-            Debug.Log(gameObject.GetHashCode());
+            return (_speedMultiplier1 + _speedMultiplier2) / 2;
         }
+    }
 
-        void OnSlowdown1(InputValue val)
-        {
-            Debug.Log(val.Get<float>());
-        }
+    void OnMove(InputValue val)
+    {
+        Debug.Log(gameObject.GetHashCode());
+    }
 
-        void OnSlowdown2(InputValue val)
-        {
-            Debug.Log(val.Get<float>());
-        }
+    void OnSlowdown1(InputValue val)
+    {
+        _speedMultiplier1 = val.Get<float>();
+    }
+
+    void OnSlowdown2(InputValue val)
+    {
+        _speedMultiplier2 = val.Get<float>();
     }
 }

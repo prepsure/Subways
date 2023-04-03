@@ -32,7 +32,7 @@ public class TrainMovement : MonoBehaviour
             PositionOnCurve(_currentCurve, _tOnCurrentCurve, TravelDirection);
 
             // TODO change curve candidate based on player controls
-            _currentCurve = PickRandom(FindNextCurveCandidates());
+            _currentCurve = PickRandom(FindNextCurveCandidates(-GetEndPointDirectionIn(_currentCurve, _tOnCurrentCurve)));
             TravelDirection = GetTravelDirectionFromClosestEndPoint(_currentCurve);
             _tOnCurrentCurve = OneAround0To0To1(-TravelDirection);
         }
@@ -47,25 +47,49 @@ public class TrainMovement : MonoBehaviour
         transform.LookAt(position + dir * curve.GetDirection(curve.DistanceToT(t)));
     }
 
-    List<ICurveBase> FindNextCurveCandidates()
+    List<ICurveBase> FindNextCurveCandidates(Vector3 outDirection)
     {
         List<ICurveBase> ALL_CURVES = FindObjectsOfType<MonoBehaviour>().OfType<ICurveBase>().ToList();
         const float MAX_CURVE_JUMP_DISTANCE = 1f;
 
         return ALL_CURVES
-            .Where(c => 
+            .Where(curve => 
             {
-                return (c != _currentCurve) && (GetClosestEndPoint(c) < MAX_CURVE_JUMP_DISTANCE);
+                int endPoint = GetClosestEndPoint(curve);
+                float endPointDistance = Vector3.Magnitude(curve.GetPoint(endPoint) - transform.position);
+                Vector3 inDirection = GetEndPointDirectionIn(curve, endPoint);
+                return curve != _currentCurve
+                    && endPointDistance < MAX_CURVE_JUMP_DISTANCE
+                    && Vector3.Dot(outDirection, inDirection) > 0;
             })
             .ToList();
     }
 
-    float GetClosestEndPoint(ICurveBase curve)
+    float GetClosestEndPointDistance(ICurveBase curve)
     {
         float startPointDisplacement = Vector3.Magnitude(curve.GetPoint(0) - transform.position);
         float endPointDisplacement = Vector3.Magnitude(curve.GetPoint(1) - transform.position);
 
         return (startPointDisplacement < endPointDisplacement) ? startPointDisplacement : endPointDisplacement;
+    }
+
+    Vector3 GetEndPointDirectionIn(ICurveBase curve, float endPoint)
+    {
+        if (endPoint < 0.5)
+        {
+            return curve.GetDirection(endPoint);
+        }
+
+        // if its at the end, to go in we reverse the direction
+        return -curve.GetDirection(endPoint);
+    }
+
+    int GetClosestEndPoint(ICurveBase curve)
+    {
+        float startPointDisplacement = Vector3.Magnitude(curve.GetPoint(0) - transform.position);
+        float endPointDisplacement = Vector3.Magnitude(curve.GetPoint(1) - transform.position);
+
+        return (startPointDisplacement < endPointDisplacement) ? 0 : 1;
     }
 
     float GetTravelDirectionFromClosestEndPoint(ICurveBase curve)
