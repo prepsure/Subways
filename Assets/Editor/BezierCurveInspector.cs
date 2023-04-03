@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -28,6 +30,8 @@ public class BezierCurveInspector : Editor {
 		
 		ShowDirections();
 		Handles.DrawBezier(p0, p3, p1, p2, Color.white, null, 2f);
+
+		ShowAllLines();
 	}
 
 	private void ShowDirections () {
@@ -42,6 +46,7 @@ public class BezierCurveInspector : Editor {
 
 	private Vector3 ShowPoint (int index) {
 		Vector3 point = handleTransform.TransformPoint(curve.points[index]);
+
 		EditorGUI.BeginChangeCheck();
 		point = Handles.DoPositionHandle(point, handleRotation);
 		if (EditorGUI.EndChangeCheck()) {
@@ -49,6 +54,50 @@ public class BezierCurveInspector : Editor {
 			EditorUtility.SetDirty(curve);
 			curve.points[index] = handleTransform.InverseTransformPoint(point);
 		}
+
 		return point;
+	}
+
+	private void ShowAllLines()
+	{
+		List<ICurveBase> allCurves = FindObjectsOfType<MonoBehaviour>().OfType<ICurveBase>().ToList();
+
+		foreach (BezierSpline spline in allCurves.Where(c => c is BezierSpline))
+		{
+			Transform handleTransform = spline.transform;
+
+			Vector3 p0 = handleTransform.TransformPoint(spline.GetControlPoint(0));
+			for (int i = 1; i < spline.ControlPointCount; i += 3)
+			{
+				Vector3 p1 = handleTransform.TransformPoint(spline.GetControlPoint(i));
+				Vector3 p2 = handleTransform.TransformPoint(spline.GetControlPoint(i + 1));
+				Vector3 p3 = handleTransform.TransformPoint(spline.GetControlPoint(i + 2));
+
+				Handles.DrawBezier(p0, p3, p1, p2, BezierSplineInspector.BEZIER_COLOR, null, 2f);
+
+				p0 = p3;
+			}
+		}
+
+		foreach (BezierCurve curve in allCurves.Where(c => c is BezierCurve))
+		{
+			Transform handleTransform = curve.transform;
+			Vector3 p0 = handleTransform.TransformPoint(curve.points[0]);
+			Vector3 p1 = handleTransform.TransformPoint(curve.points[1]);
+			Vector3 p2 = handleTransform.TransformPoint(curve.points[2]);
+			Vector3 p3 = handleTransform.TransformPoint(curve.points[3]);
+
+			Handles.DrawBezier(p0, p3, p1, p2, BezierSplineInspector.BEZIER_COLOR, null, 2f);
+		}
+
+		foreach (Line line in allCurves.Where(c => c is Line))
+		{
+			Transform handleTransform = line.transform;
+			Vector3 p0 = handleTransform.TransformPoint(line.p0);
+			Vector3 p1 = handleTransform.TransformPoint(line.p1);
+
+			Handles.color = BezierSplineInspector.BEZIER_COLOR;
+			Handles.DrawLine(p0, p1);
+		}
 	}
 }

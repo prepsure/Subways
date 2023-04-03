@@ -42,9 +42,9 @@ public class TrainMovement : MonoBehaviour
 
     void PositionOnCurve(ICurveBase curve, float t, float dir)
     {
-        Vector3 position = curve.GetPoint(t);
+        Vector3 position = curve.GetPoint(curve.DistanceToT(t));
         transform.localPosition = position;
-        transform.LookAt(position + dir * curve.GetDirection(t));
+        transform.LookAt(position + dir * curve.GetDirection(curve.DistanceToT(t)));
     }
 
     List<ICurveBase> FindNextCurveCandidates()

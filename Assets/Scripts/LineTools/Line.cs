@@ -9,6 +9,10 @@ public class Line : MonoBehaviour, ICurveBase {
 		return transform.TransformPoint(Vector3.Lerp(p0, p1, t));
 	}
 
+	public float DistanceToT(float d) {
+		return d;
+	}
+
 	public Vector3 GetVelocity(float _)
 	{
 		return transform.TransformPoint(p1 - p0) - transform.position;

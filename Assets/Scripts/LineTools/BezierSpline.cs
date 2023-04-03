@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public enum BezierControlPointMode
 {
@@ -150,7 +151,19 @@ public class BezierSpline : MonoBehaviour, ICurveBase {
 		}
 		return transform.TransformPoint(Bezier.GetPoint(points[i], points[i + 1], points[i + 2], points[i + 3], t));
 	}
-	
+
+	float[] DistanceToTMap;
+
+	public float DistanceToT(float d)
+	{
+		if (DistanceToTMap == null)
+        {
+			DistanceToTMap = Bezier.MakeDistanceToTMap(this);
+        }
+
+		return DistanceToTMap[(int)Mathf.Clamp(d * DistanceToTMap.Length, 0, DistanceToTMap.Length-1)];
+	}
+
 	public Vector3 GetVelocity (float t) {
 		int i;
 		if (t >= 1f) {
