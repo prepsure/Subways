@@ -9,6 +9,7 @@ public class PlayerRegistry : MonoBehaviour
     void Awake()
     {
         PlayersJoined = new GameObject[GetComponent<PlayerInputManager>().maxPlayerCount];
+        DontDestroyOnLoad(gameObject);
     }
 
     public int RegisterPlayer(GameObject player)

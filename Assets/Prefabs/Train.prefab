@@ -97,5 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartCurve: {fileID: 0}
+  IdealTurningDirection: {x: 0, y: 0, z: 0}
+  MaxTravelSpeed: 15
   TravelSpeed: 6
   TravelDirection: 1
