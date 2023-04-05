@@ -11,7 +11,7 @@ public class BezierSplineInspector : Editor {
 	private const float handleSize = 0.04f;
 	private const float pickSize = 0.06f;
 
-	public static readonly Color BEZIER_COLOR = Color.white;
+	public static readonly Color BEZIER_COLOR = new Color(94/255f, 255/255f, 52/255f);
 
 	private static Color[] modeColors = {
 		Color.magenta,
