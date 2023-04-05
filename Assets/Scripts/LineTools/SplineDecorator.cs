@@ -32,7 +32,7 @@ public class SplineDecorator : MonoBehaviour
 		{
 			for (int i = 0; i < items.Length; i++, p++)
 			{
-				Transform item = Instantiate(items[i]) as Transform;
+				Transform item = Instantiate(items[i]);
 				Vector3 position = spline.GetPoint(spline.DistanceToT(p * stepSize));
 				item.transform.localPosition = position;
 				if (lookForward)
