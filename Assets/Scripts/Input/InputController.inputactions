@@ -1,5 +1,5 @@
 {
-    "name": "TrainController",
+    "name": "InputController",
     "maps": [
         {
             "name": "Player",
@@ -36,6 +36,15 @@
                     "name": "StartButton",
                     "type": "Button",
                     "id": "b38d2b70-eb82-49dc-843f-833b0d4e9204",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "bebda19c-646e-4bea-bcda-b47b9c39c777",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -128,6 +137,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "StartButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be98d3b4-635b-40ca-821e-f429579b9543",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a75d4eaf-1618-4afd-a41d-866b68959fa7",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

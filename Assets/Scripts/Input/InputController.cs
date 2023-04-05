@@ -62,6 +62,15 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""bebda19c-646e-4bea-bcda-b47b9c39c777"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,28 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""action"": ""StartButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be98d3b4-635b-40ca-821e-f429579b9543"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a75d4eaf-1618-4afd-a41d-866b68959fa7"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +195,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         m_Player_Slowdown1 = m_Player.FindAction("Slowdown1", throwIfNotFound: true);
         m_Player_Slowdown2 = m_Player.FindAction("Slowdown2", throwIfNotFound: true);
         m_Player_StartButton = m_Player.FindAction("StartButton", throwIfNotFound: true);
+        m_Player_Submit = m_Player.FindAction("Submit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +259,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Slowdown1;
     private readonly InputAction m_Player_Slowdown2;
     private readonly InputAction m_Player_StartButton;
+    private readonly InputAction m_Player_Submit;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
@@ -235,6 +268,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         public InputAction @Slowdown1 => m_Wrapper.m_Player_Slowdown1;
         public InputAction @Slowdown2 => m_Wrapper.m_Player_Slowdown2;
         public InputAction @StartButton => m_Wrapper.m_Player_StartButton;
+        public InputAction @Submit => m_Wrapper.m_Player_Submit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +290,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @StartButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
                 @StartButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
                 @StartButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
+                @Submit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
+                @Submit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
+                @Submit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +309,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @StartButton.started += instance.OnStartButton;
                 @StartButton.performed += instance.OnStartButton;
                 @StartButton.canceled += instance.OnStartButton;
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
             }
         }
     }
@@ -282,5 +322,6 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         void OnSlowdown1(InputAction.CallbackContext context);
         void OnSlowdown2(InputAction.CallbackContext context);
         void OnStartButton(InputAction.CallbackContext context);
+        void OnSubmit(InputAction.CallbackContext context);
     }
 }
