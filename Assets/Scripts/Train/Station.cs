@@ -15,4 +15,21 @@ public class Station : MonoBehaviour
     {
         
     }
+
+    //When train is x distance from station, unload passengers and increment score
+/*    if (stationDistance <= x)
+    {
+        numPassengersOn;
+        numPassengersOff;
+        playerScore = (numPassengersOff * 100);
+    }
+
+    //Add y number of passengers at each station
+    int[] stations = new int[8];
+
+    for (int[] j = 0; j < 8; j++)
+    {
+        Console.WriteLine(rnd.Next(10));
+    }
+*/
 }
