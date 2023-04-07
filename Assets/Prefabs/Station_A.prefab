@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1820619356512749931}
   - component: {fileID: 1820619356512749930}
   - component: {fileID: 1820619356512749929}
+  - component: {fileID: 2591479260889756764}
   m_Layer: 0
   m_Name: Station_A
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820619356512749928}
   m_LocalRotation: {x: -0, y: -0.6253665, z: -0, w: 0.7803312}
-  m_LocalPosition: {x: -10.05, y: 0, z: 58.16518}
+  m_LocalPosition: {x: -11.078312, y: 0.5, z: 60.4439}
   m_LocalScale: {x: 4, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,55 +164,55 @@ MonoBehaviour:
   - m_Vertices: 0b0000000e00000012000000
   m_SharedTextures: []
   m_Positions:
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 1}
-  - {x: 0, y: 1, z: 1}
-  - {x: 1, y: 1, z: 1}
-  - {x: 1, y: 0, z: 1}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 1, z: 1}
-  - {x: 1, y: 1, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 1, z: 0}
-  - {x: 0, y: 1, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 1, z: 0}
-  - {x: 0, y: 1, z: 1}
-  - {x: 0, y: 1, z: 1}
-  - {x: 1, y: 1, z: 1}
-  - {x: 0, y: 1, z: 0}
-  - {x: 1, y: 1, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 1}
+  - {x: -0.49999973, y: -0.5, z: 0.5000001}
+  - {x: 0.50000024, y: -0.5, z: 0.5000001}
+  - {x: -0.49999973, y: 0.5, z: 0.5000001}
+  - {x: 0.50000024, y: 0.5, z: 0.5000001}
+  - {x: 0.50000024, y: -0.5, z: 0.5000001}
+  - {x: 0.50000024, y: -0.5, z: -0.49999985}
+  - {x: 0.50000024, y: 0.5, z: 0.5000001}
+  - {x: 0.50000024, y: 0.5, z: -0.49999985}
+  - {x: 0.50000024, y: -0.5, z: -0.49999985}
+  - {x: -0.49999973, y: -0.5, z: -0.49999985}
+  - {x: 0.50000024, y: 0.5, z: -0.49999985}
+  - {x: -0.49999973, y: 0.5, z: -0.49999985}
+  - {x: -0.49999973, y: -0.5, z: -0.49999985}
+  - {x: -0.49999973, y: -0.5, z: 0.5000001}
+  - {x: -0.49999973, y: 0.5, z: -0.49999985}
+  - {x: -0.49999973, y: 0.5, z: 0.5000001}
+  - {x: -0.49999973, y: 0.5, z: 0.5000001}
+  - {x: 0.50000024, y: 0.5, z: 0.5000001}
+  - {x: -0.49999973, y: 0.5, z: -0.49999985}
+  - {x: 0.50000024, y: 0.5, z: -0.49999985}
+  - {x: -0.49999973, y: -0.5, z: -0.49999985}
+  - {x: 0.50000024, y: -0.5, z: -0.49999985}
+  - {x: -0.49999973, y: -0.5, z: 0.5000001}
+  - {x: 0.50000024, y: -0.5, z: 0.5000001}
   m_Textures0:
-  - {x: 0, y: 0}
-  - {x: -1, y: 0}
-  - {x: 0, y: 1}
-  - {x: -1, y: 1}
-  - {x: 1, y: 0}
-  - {x: 0, y: 0}
-  - {x: 1, y: 1}
-  - {x: 0, y: 1}
-  - {x: 1, y: 0}
-  - {x: 0, y: 0}
-  - {x: 1, y: 1}
-  - {x: 0, y: 1}
-  - {x: 0, y: 0}
-  - {x: -1, y: 0}
-  - {x: 0, y: 1}
-  - {x: -1, y: 1}
-  - {x: 0, y: 1}
-  - {x: 1, y: 1}
-  - {x: 0, y: 0}
-  - {x: 1, y: 0}
-  - {x: 0, y: 0}
-  - {x: -1, y: 0}
-  - {x: 0, y: 1}
-  - {x: -1, y: 1}
+  - {x: 0.49999973, y: -0.5}
+  - {x: -0.50000024, y: -0.5}
+  - {x: 0.49999973, y: 0.5}
+  - {x: -0.50000024, y: 0.5}
+  - {x: 0.5000001, y: -0.5}
+  - {x: -0.49999985, y: -0.5}
+  - {x: 0.5000001, y: 0.5}
+  - {x: -0.49999985, y: 0.5}
+  - {x: 0.50000024, y: -0.5}
+  - {x: -0.49999973, y: -0.5}
+  - {x: 0.50000024, y: 0.5}
+  - {x: -0.49999973, y: 0.5}
+  - {x: 0.49999985, y: -0.5}
+  - {x: -0.5000001, y: -0.5}
+  - {x: 0.49999985, y: 0.5}
+  - {x: -0.5000001, y: 0.5}
+  - {x: -0.49999973, y: 0.5000001}
+  - {x: 0.50000024, y: 0.5000001}
+  - {x: -0.49999973, y: -0.49999985}
+  - {x: 0.50000024, y: -0.49999985}
+  - {x: 0.49999973, y: -0.49999985}
+  - {x: -0.50000024, y: -0.49999985}
+  - {x: 0.49999973, y: 0.5000001}
+  - {x: -0.50000024, y: 0.5000001}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 35
+  m_VersionIndex: 38
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -344,3 +345,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2591479260889756764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820619356512749928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fe4c4e03afe394d9d6aeffba34fc9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxPassengersWaiting: 0
+  MaxTimeUntilDestinationSwitch: 0
+  PassengersWaiting: 0
+  TimeUntilDestinationSwitch: 0

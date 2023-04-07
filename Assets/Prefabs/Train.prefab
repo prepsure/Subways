@@ -115,7 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DropOffStation: {fileID: 0}
-  MaxPassengers: 0
+  MaxPassengers: 20
   CurrentPassengers: 0
-  PassengerPickupRate: 0
-  PassengerDropOffRate: 0
+  PassengerPickupRate: 2
+  PassengerDropOffRate: 2
+  MaxPickUpDistance: 5

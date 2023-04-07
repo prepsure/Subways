@@ -45,8 +45,6 @@ public class TrainMovement : MonoBehaviour
             _tOnCurrentCurve = Mathf.Clamp(_tOnCurrentCurve, 0, 1);
             PositionOnCurve(_currentCurve, _tOnCurrentCurve, TravelDirection);
 
-            // TODO change curve candidate based on player controls
-            Debug.Log(IdealTurningDirection);
             _currentCurve = PickClosestInDirectionOnXZ(
                 IdealTurningDirection,
                 FindNextCurveCandidates(-GetEndPointDirectionIn(_currentCurve, _tOnCurrentCurve))
