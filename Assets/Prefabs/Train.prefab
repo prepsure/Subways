@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6367303348641311961}
   - component: {fileID: 6367303348641311960}
   - component: {fileID: 6367303348641311963}
+  - component: {fileID: -1206590438771712044}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6367303348641311962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8366933, y: -4.6815014, z: 0.42702407}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +99,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartCurve: {fileID: 0}
   IdealTurningDirection: {x: 0, y: 0, z: 0}
-  MaxTravelSpeed: 15
+  MaxTravelSpeed: 12
   TravelSpeed: 6
   TravelDirection: 1
+--- !u!114 &-1206590438771712044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367303348641311962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935f5a8d40c9c9e468edfd599a9694be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropOffStation: {fileID: 0}
+  MaxPassengers: 0
+  CurrentPassengers: 0
+  PassengerPickupRate: 0
+  PassengerDropOffRate: 0

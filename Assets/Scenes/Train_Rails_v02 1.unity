@@ -944,7 +944,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215335851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6934,8 +6934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 1, y: 0, z: 0}
-  - {x: -12.640947, y: 0, z: 0.075037956}
+  - {x: -2.3764746, y: 0, z: 0.060010195}
+  - {x: 4.566779, y: 0, z: 0.81981945}
   - {x: 17.168571, y: 0, z: 12.316141}
   - {x: 19.695465, y: 0, z: 19.279001}
   modes: 0000000000000000

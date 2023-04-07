@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Station : MonoBehaviour
 {
+    public int MaxPassengersWaiting;
+    public int MaxTimeUntilDestinationSwitch;
+
+    public int PassengersWaiting;
+    public int TimeUntilDestinationSwitch;
+
     // Start is called before the first frame update
     void Start()
     {

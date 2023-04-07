@@ -18,10 +18,10 @@ public class TrainController : MonoBehaviour
     }
     public Vector3 IdealWorldDirection = Vector3.zero;
 
-    public GameObject MakeTrain()
+    public GameObject MakeTrain(Color c)
     {
         myTrain = Instantiate(TrainPrefab);
-        myTrain.GetComponent<Renderer>().materials[0].color = Random.ColorHSV();
+        myTrain.GetComponent<Renderer>().materials[0].color = c;
         return myTrain;
     }
 
