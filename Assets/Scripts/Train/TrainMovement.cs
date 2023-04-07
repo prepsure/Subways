@@ -17,7 +17,7 @@ public class TrainMovement : MonoBehaviour
 
     bool Started = false;
 
-    const float MAX_CURVE_JUMP_DISTANCE = 0.2f;
+    const float MAX_CURVE_JUMP_DISTANCE = 1f;
 
     // Start is called before the first frame update
     public void StartChuggin()

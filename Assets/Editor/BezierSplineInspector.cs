@@ -12,6 +12,7 @@ public class BezierSplineInspector : Editor {
 	private const float pickSize = 0.06f;
 
 	public static readonly Color BEZIER_COLOR = new Color(94/255f, 255/255f, 52/255f);
+	public static readonly Color ALT_BEZIER_COLOR = new Color(210 / 255f, 169 / 255f, 232 / 255f);
 
 	private static Color[] modeColors = {
 		Color.magenta,
@@ -33,6 +34,16 @@ public class BezierSplineInspector : Editor {
 			EditorUtility.SetDirty(spline);
 			spline.Loop = loop;
 		}
+
+		EditorGUI.BeginChangeCheck();
+		bool mark = EditorGUILayout.Toggle("Mark", spline.Mark);
+		if (EditorGUI.EndChangeCheck())
+		{
+			Undo.RecordObject(spline, "Toggle Mark");
+			EditorUtility.SetDirty(spline);
+			spline.Mark = mark;
+		}
+
 		if (selectedIndex >= 0 && selectedIndex < spline.ControlPointCount) {
 			DrawSelectedPointInspector();
 		}
@@ -124,6 +135,8 @@ public class BezierSplineInspector : Editor {
 
 		foreach (BezierSpline spline in allCurves.Where(c => c is BezierSpline))
 		{
+			Color bColor = spline.Mark ? ALT_BEZIER_COLOR : BEZIER_COLOR; 
+
 			Transform handleTransform = spline.transform;
 
 			Vector3 p0 = handleTransform.TransformPoint(spline.GetControlPoint(0));
@@ -133,7 +146,7 @@ public class BezierSplineInspector : Editor {
 				Vector3 p2 = handleTransform.TransformPoint(spline.GetControlPoint(i + 1));
 				Vector3 p3 = handleTransform.TransformPoint(spline.GetControlPoint(i + 2));
 
-				Handles.DrawBezier(p0, p3, p1, p2, BEZIER_COLOR, null, 2f);
+				Handles.DrawBezier(p0, p3, p1, p2, bColor, null, 2f);
 
 				p0 = p3;
 			}

@@ -20,6 +20,9 @@ public class BezierSpline : MonoBehaviour, ICurveBase {
 	[SerializeField]
 	private bool loop;
 
+	[SerializeField]
+	public bool Mark;
+
 	public bool Loop {
 		get {
 			return loop;

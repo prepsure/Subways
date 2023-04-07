@@ -24,6 +24,6 @@ public class PlayerController : MonoBehaviour
 
     void OnStartButton()
     {
-        SceneManager.LoadScene("TestRails", LoadSceneMode.Single);
+        SceneManager.LoadScene("Train_Rails_v02", LoadSceneMode.Single);
     }
 }
