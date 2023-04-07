@@ -17,19 +17,48 @@ public class Station : MonoBehaviour
     }
 
     //When train is x distance from station, unload passengers and increment score
-/*    if (stationDistance <= x)
+/*    float stationDistance;
+
+    float x;
+
+    int trainPassengers;
+
+    int waitingPassengers;
+
+    int placeholder;
+
+    if (stationDistance <= x)
     {
-        numPassengersOn;
-        numPassengersOff;
-        playerScore = (numPassengersOff * 100);
+        placeholder = trainPassengers;
+        trainPassengers = (trainPassengers + waitingPassengers);
+        waitingPassengers = placeholder;
+        playerScore = (waitingPassengers * 100); 
     }
+*/
 
     //Add y number of passengers at each station
-    int[] stations = new int[8];
+/*    int[] stations = new int[8];
 
     for (int[] j = 0; j < 8; j++)
     {
-        Console.WriteLine(rnd.Next(10));
+        Random.Range(1,10);
+    }
+*/
+
+    //Check for train capacity
+/*    int trainMax = 100;
+
+    int passTotal = 0;
+
+    Check
+    {
+        if (passTotal >= trainMax)
+        {
+            Console.WriteLine("Your train is full");
+        }
+        else {
+            passTotal++;
+        }
     }
 */
 }
