@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1820619356512749930}
   - component: {fileID: 1820619356512749931}
   - component: {fileID: 8743235047803949844}
+  - component: {fileID: 2123736899048439954}
   m_Layer: 0
   m_Name: Station
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820619356512749928}
-  m_LocalRotation: {x: -0, y: -0.6253665, z: -0, w: 0.7803312}
-  m_LocalPosition: {x: -11.078312, y: 0.5, z: 60.4439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -77.418, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1820619356512749930
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,4 +100,17 @@ MonoBehaviour:
   MaxPassengersWaiting: 20
   PassengersWaiting: 0
   isDropOff: 0
-  PassengerArrivalRate: 1
+  PassengerArrivalRate: 0.5
+--- !u!114 &2123736899048439954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820619356512749928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41079328d4cd26419265716f9ffb40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIPrefab: {fileID: 6491336235412721001, guid: 0e3cf060d743c4c4d862dd96d15c02f9, type: 3}

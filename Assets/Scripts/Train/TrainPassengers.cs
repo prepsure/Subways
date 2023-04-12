@@ -15,8 +15,6 @@ namespace Assets.Scripts.Train
 
         public float MaxPickUpDistance;
 
-        public float TotalPassengersAllTime;
-
         public float Score;
 
         // Use this for initialization
@@ -39,20 +37,18 @@ namespace Assets.Scripts.Train
                 {
                     float pickedUp = closestStation.PickUp(PassengerPickupRate);
                     CurrentPassengers += pickedUp;
-                    TotalPassengersAllTime += pickedUp;
                 }
-                closestStation.GetComponent<Renderer>().material.color = Random.ColorHSV();
             } 
             else if (closeToStation && closestStation.isDropOff)
             {
                 // Drop off
                 if (CurrentPassengers > 0)
                 {
-                    CurrentPassengers -= closestStation.DropOff(PassengerDropOffRate);
+                    float droppedOff = closestStation.DropOff(PassengerDropOffRate);
+                    CurrentPassengers -= droppedOff;
+                    Score += droppedOff;
                 }
             }
-
-            Score = TotalPassengersAllTime - CurrentPassengers;
         }
 
         Station GetClosestStation()

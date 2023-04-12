@@ -32,6 +32,11 @@ public class Station : MonoBehaviour
 
     public float PickUp(float pickupRate)
     {
+        if (PassengersWaiting < Time.deltaTime * pickupRate)
+        {
+            return 0;
+        }
+
         float passengersPickedUp = Time.deltaTime * pickupRate;
         PassengersWaiting -= passengersPickedUp;
 

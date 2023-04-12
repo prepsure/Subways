@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +35,21 @@ public class PlayerController : MonoBehaviour
 
     void OnStartButton()
     {
+        if (SceneManager.GetActiveScene().name != "TitleScreen")
+        {
+            Debug.Log(SceneManager.GetActiveScene().name);
+            return;
+        }
+
+        StartCoroutine(ChangeScenes());
+    }
+
+    IEnumerator ChangeScenes()
+    {
+        SceneManager.LoadScene("Instructions_1", LoadSceneMode.Single);
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("Instructions_2", LoadSceneMode.Single);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene("TestRails", LoadSceneMode.Single);
     }
 }
