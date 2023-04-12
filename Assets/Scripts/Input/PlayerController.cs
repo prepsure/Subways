@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        StartCoroutine(ChangeScenes());
+        SceneManager.LoadScene("TestRails", LoadSceneMode.Single);
+        //StartCoroutine(ChangeScenes());
     }
 
     IEnumerator ChangeScenes()

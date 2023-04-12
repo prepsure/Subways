@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 public class TrainController : MonoBehaviour
 {
     public GameObject TrainPrefab;
-    private GameObject myTrain;
+
+    private GameObject _myTrain;
 
     private float _speedMultiplier1 = 1;
     private float _speedMultiplier2 = 1;
@@ -20,9 +21,9 @@ public class TrainController : MonoBehaviour
 
     public GameObject MakeTrain()
     {
-        myTrain = Instantiate(TrainPrefab);
-        
-        return myTrain;
+        _myTrain = Instantiate(TrainPrefab);
+
+        return _myTrain;
     }
 
     void OnMove(InputValue val)
@@ -45,12 +46,12 @@ public class TrainController : MonoBehaviour
 
     private void Update()
     {
-        if (myTrain == null)
+        if (_myTrain == null)
         {
             return;
         }
 
-        TrainMovement movement = myTrain.GetComponent<TrainMovement>();
+        TrainMovement movement = _myTrain.GetComponent<TrainMovement>();
 
         movement.TravelSpeed = movement.MaxTravelSpeed * SpeedMultiplier;
         movement.IdealTurningDirection = IdealWorldDirection;

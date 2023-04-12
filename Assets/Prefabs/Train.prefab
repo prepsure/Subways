@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6367303348641311963}
   - component: {fileID: -1206590438771712044}
   - component: {fileID: 7167386533043734476}
+  - component: {fileID: 8803084315138593200}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -221,6 +222,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPrefab: {fileID: 6491336235412721001, guid: 0e3cf060d743c4c4d862dd96d15c02f9, type: 3}
   PlayerNum: 0
+--- !u!114 &8803084315138593200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367303348641311962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb76c56fd0ecd784a985d92fe88f548e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowPrefab: {fileID: 4937087826618015781, guid: c74e57e462aaec34d87ce299b4fc63b3, type: 3}
 --- !u!1 &8570880276223648365
 GameObject:
   m_ObjectHideFlags: 0

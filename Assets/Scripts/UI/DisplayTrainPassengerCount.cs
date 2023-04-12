@@ -30,7 +30,6 @@ namespace Assets.Scripts.UI
             _mainCamera = FindObjectOfType<Camera>();
             _trainStats = GetComponent<TrainPassengers>();
 
-
             _passengerCount = Instantiate(UIPrefab, FindObjectOfType<Canvas>().transform);
             _passengerCount.color = Color.Lerp(_trainStats.gameObject.GetComponent<Renderer>().materials[0].color, Color.white, 0.5f);
 

@@ -25,7 +25,7 @@ namespace Assets.Scripts.UI
         void Update()
         {
             Vector3 screenPoint = _mainCamera.WorldToScreenPoint(transform.position);
-            _count.GetComponent<RectTransform>().anchoredPosition = Vector3.Scale(screenPoint, new Vector3(1, 1, 1));
+            _count.GetComponent<RectTransform>().anchoredPosition = screenPoint;
             _count.text = ((int)_stationStats.PassengersWaiting).ToString();
         }
     }
