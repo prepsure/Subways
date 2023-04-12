@@ -31,7 +31,7 @@ namespace Assets.Scripts.UI
 
             _timer -= Time.deltaTime;
 
-            _count.text = (Mathf.Round(_timer*10)).ToString();
+            _count.text = _timer.ToString("F2");
 
             if (_timer < 0)
             {
