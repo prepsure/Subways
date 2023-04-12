@@ -52,7 +52,7 @@ namespace Assets.Scripts.Train
             FindObjectOfType<AudioSource>().Play();
             
             GetComponentInParent<TrainPassengers>().CurrentPassengers = 0;
-            GetComponentInParent<TrainPassengers>().Score /= 2;
+            //GetComponentInParent<TrainPassengers>().Score /= 2;
 
             Explosion.SetActive(true);
         }
