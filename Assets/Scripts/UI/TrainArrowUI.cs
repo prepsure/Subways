@@ -25,7 +25,11 @@ namespace Assets.Scripts.UI
         {
             Vector3 screenPoint = _mainCamera.WorldToScreenPoint(transform.position);
             _arrow.GetComponent<RectTransform>().anchoredPosition = screenPoint;
-            _arrow.transform.LookAt(_mainCamera.transform.TransformDirection(GetComponent<TrainMovement>().IdealTurningDirection) + _arrow.transform.position);
+
+            Vector3 raw = GetComponent<TrainMovement>().IdealTurningDirection;
+            Vector3 rotated = GetComponent<TrainMovement>().IdealTurningDirection;
+
+            _arrow.transform.LookAt(rotated + _arrow.transform.position);
         }
     }
 }
