@@ -31,10 +31,11 @@ namespace Assets.Scripts.UI
             Vector3 screenPoint = _mainCamera.WorldToScreenPoint(transform.position);
             _arrow.GetComponent<RectTransform>().anchoredPosition = screenPoint;
 
-            Vector2 turn = new(GetComponent<TrainMovement>().IdealTurningDirection.x, GetComponent<TrainMovement>().IdealTurningDirection.z);
-            Quaternion rot = closestRotToDir(turn);
+            Vector3 idealDir = GetComponent<TrainMovement>().IdealTurningDirection;
+            Vector2 turnDir = new(idealDir.x, idealDir.z);
+            Quaternion rot = closestRotToDir(turnDir);
             _arrow.GetComponent<RectTransform>().rotation = rot;
-            _arrow.GetComponent<RectTransform>().sizeDelta = new Vector2(turn.magnitude * _maxSizeDelta.x, _maxSizeDelta.y);
+            _arrow.GetComponent<RectTransform>().sizeDelta = new Vector2(turnDir.magnitude * _maxSizeDelta.x, _maxSizeDelta.y);
         }
 
         Quaternion closestRotToDir(Vector2 dir)
