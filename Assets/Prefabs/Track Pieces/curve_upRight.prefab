@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &912909022948901610
+--- !u!1 &6340340150114783441
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,58 +8,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8250599484658018030}
-  - component: {fileID: 326146372377014437}
-  - component: {fileID: 6938671911445736941}
+  - component: {fileID: 940552663052322780}
+  - component: {fileID: 7157440977231066061}
+  - component: {fileID: 373563932754798925}
   m_Layer: 0
-  m_Name: Two-Way
+  m_Name: curve_upRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8250599484658018030
+--- !u!4 &940552663052322780
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912909022948901610}
+  m_GameObject: {fileID: 6340340150114783441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &326146372377014437
+--- !u!114 &7157440977231066061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912909022948901610}
+  m_GameObject: {fileID: 6340340150114783441}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b154883273c2845f39445c8015d81639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 1, y: 0, z: -1}
-  - {x: 1, y: 0, z: 0.25}
-  - {x: 1.5, y: 0, z: 1}
-  - {x: 3, y: 0, z: 1}
+  - {x: 2, y: 0, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 4, y: 0, z: -1}
+  - {x: 4, y: 0, z: -2}
   modes: 0000000000000000
   loop: 0
   Mark: 0
---- !u!114 &6938671911445736941
+--- !u!114 &373563932754798925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912909022948901610}
+  m_GameObject: {fileID: 6340340150114783441}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f24578fb99c5a945be19fd158c9813c, type: 3}
