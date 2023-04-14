@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TestRails.unity
     guid: 5311c8a3a1e814d408efad8348746c90
   - enabled: 0
-    path: Assets/Scenes/Train_Rails_v01.unity
+    path: Assets/Scenes/old/Train_Rails_v01.unity
     guid: cbb5bce1c0c97a744ab1731bad905452
   - enabled: 1
-    path: Assets/Scenes/Train_Rails_v03.unity
+    path: Assets/Scenes/old/Train_Rails_v03.unity
     guid: fb8a39b98c7ff954495a674e203cdb70
   - enabled: 1
     path: Assets/Scenes/Instructions_2.unity
