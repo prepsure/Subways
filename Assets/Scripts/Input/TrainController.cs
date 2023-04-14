@@ -29,6 +29,7 @@ public class TrainController : MonoBehaviour
     void OnMove(InputValue val)
     {
         Vector2 rawInput = val.Get<Vector2>();
+        Debug.Log(rawInput);
 
         IdealWorldDirection = FindObjectOfType<Camera>().transform
             .TransformDirection(new Vector3(rawInput.x, rawInput.y, 0));
