@@ -45,9 +45,13 @@ public class TrainMovement : MonoBehaviour
             _tOnCurrentCurve = Mathf.Clamp(_tOnCurrentCurve, 0, 1);
             PositionOnCurve(_currentCurve, _tOnCurrentCurve, TravelDirection);
 
+            Vector3 currentPointCurveDir = -GetEndPointDirectionIn(_currentCurve, _tOnCurrentCurve);
+            List<ICurveBase> candidates = FindNextCurveCandidates(currentPointCurveDir);
+
             _currentCurve = PickClosestInDirectionOnXZ(
                 IdealTurningDirection,
-                FindNextCurveCandidates(-GetEndPointDirectionIn(_currentCurve, _tOnCurrentCurve))
+                candidates,
+                currentPointCurveDir
             );
             TravelDirection = GetTravelDirectionFromClosestEndPoint(_currentCurve);
             _tOnCurrentCurve = OneAround0To0To1(-TravelDirection);
@@ -98,7 +102,7 @@ public class TrainMovement : MonoBehaviour
     Vector3 GetEndPointTrackDirectionIn(ICurveBase curve, float endPoint)
     {
         // dt so we dont get the direction directly at the end (which will probably be 0)
-        float dt = 0.01f;
+        float dt = 0.1f;
 
         if (endPoint < 0.5)
         {
@@ -125,8 +129,14 @@ public class TrainMovement : MonoBehaviour
         return (startPointDisplacement < endPointDisplacement) ? 1 : -1;
     }
 
-    public ICurveBase PickClosestInDirectionOnXZ(Vector3 target, List<ICurveBase> candidates)
+    public ICurveBase PickClosestInDirectionOnXZ(Vector3 target, List<ICurveBase> candidates, Vector3 currentMovingDir)
     {
+        // if not holding a direction, or trying to hold straight, use the current train moving dir
+        if (target.Equals(Vector2.zero) || Vector3.Dot(target.normalized, currentMovingDir.normalized) > 0.85f)
+        {
+            target = currentMovingDir;
+        }
+
         ICurveBase bestSoFar = candidates[0];
 
         foreach (ICurveBase curve in candidates)
