@@ -142,6 +142,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b1ce3e25-9676-4002-9a93-a8191c7c54b7",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "be98d3b4-635b-40ca-821e-f429579b9543",
                     "path": "<Joystick>/stick/left",
                     "interactions": "",

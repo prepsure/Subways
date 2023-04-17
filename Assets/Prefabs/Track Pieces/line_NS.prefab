@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f24578fb99c5a945be19fd158c9813c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 0
-  lookForward: 0
-  items: []
+  frequency: 30
+  lookForward: 1
+  items:
+  - {fileID: 400000, guid: 07bc9122086c6428c8abcca8696763ac, type: 3}

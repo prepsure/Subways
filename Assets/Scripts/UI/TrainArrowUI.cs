@@ -40,7 +40,7 @@ namespace Assets.Scripts.UI
 
         Quaternion closestRotToDir(Vector2 dir)
         {
-            return Quaternion.Euler(90, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
+            return Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x));
         }
     }
 }

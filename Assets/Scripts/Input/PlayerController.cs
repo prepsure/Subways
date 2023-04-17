@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public int PlayerNumber;
     public Color PlayerColor;
 
+    public string _initialSceneName;
+
     private Dictionary<int, Color> playerColors = new()
     {
         { 0, new Color(0.81f, 0.44f, 1) },
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         PlayerColor = playerColors[PlayerNumber];
         gameObject.name = "Player" + (PlayerNumber);
         DontDestroyOnLoad(gameObject);
+
+        _initialSceneName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -35,13 +39,13 @@ public class PlayerController : MonoBehaviour
 
     void OnStartButton()
     {
-        if (SceneManager.GetActiveScene().name != "TitleScreen")
+        if (SceneManager.GetActiveScene().name != _initialSceneName)
         {
             Debug.Log(SceneManager.GetActiveScene().name);
             return;
         }
 
-        SceneManager.LoadScene("TestRails", LoadSceneMode.Single);
+        SceneManager.LoadScene("TrainRails", LoadSceneMode.Single);
         //StartCoroutine(ChangeScenes());
     }
 
@@ -51,6 +55,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Instructions_2", LoadSceneMode.Single);
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("TestRails", LoadSceneMode.Single);
+        SceneManager.LoadScene("TrainRails", LoadSceneMode.Single);
     }
 }

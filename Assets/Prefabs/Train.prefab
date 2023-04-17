@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5484003872576825352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.000000014901}
-  m_LocalScale: {x: 3.1125, y: 3.1125, z: 2.3565671}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6367303348641311958}
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 6367303348641311962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8366933, y: -4.6815014, z: 0.42702407}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8786928963677717205}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartCurve: {fileID: 0}
   IdealTurningDirection: {x: 0, y: 0, z: 0}
-  MaxTravelSpeed: 12
+  MaxTravelSpeed: 25
   TravelSpeed: 6
   TravelDirection: 1
 --- !u!114 &-1206590438771712044
@@ -206,7 +206,7 @@ MonoBehaviour:
   CurrentPassengers: 0
   PassengerPickupRate: 2
   PassengerDropOffRate: 2
-  MaxPickUpDistance: 5
+  MaxPickUpDistance: 10
   Score: 0
 --- !u!114 &7167386533043734476
 MonoBehaviour:
