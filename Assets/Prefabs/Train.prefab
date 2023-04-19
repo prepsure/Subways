@@ -150,7 +150,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 22300b2b33d0bc44aade839ed7ac0edd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartCurve: {fileID: 0}
   IdealTurningDirection: {x: 0, y: 0, z: 0}
-  MaxTravelSpeed: 25
+  MaxTravelSpeed: 50
   TravelSpeed: 6
   TravelDirection: 1
 --- !u!114 &-1206590438771712044
