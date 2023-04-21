@@ -16260,6 +16260,10 @@ PrefabInstance:
       propertyPath: points.Array.data[3].z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3145823273533261489, guid: fe551dddc39fb4049b89728f4dda8e0f, type: 3}
+      propertyPath: frequency
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3264472072042161928, guid: fe551dddc39fb4049b89728f4dda8e0f, type: 3}
       propertyPath: m_RootOrder
       value: 13
