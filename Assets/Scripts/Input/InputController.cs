@@ -33,7 +33,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""id"": ""57db5f06-7bc1-4529-ba74-2c11aaf7d144"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=1)"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true
                 },
                 {
@@ -42,7 +42,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""id"": ""c7520050-dfa0-4131-a18c-5e48f5d393c6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=1)"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true
                 },
                 {
