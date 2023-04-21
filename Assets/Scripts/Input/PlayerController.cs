@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -20,21 +21,40 @@ public class PlayerController : MonoBehaviour
         { 3, new Color(0.61f, 1, 0.48f) },
     };
 
-    // Start is called before the first frame update
-    void Awake()
+    private bool join1;
+    private bool join2;
+
+    // Update is called once per frame
+    void OnDestroy()
     {
+        FindObjectOfType<PlayerRegistry>().DeregisterPlayer(PlayerNumber);
+    }
+
+    void OnJoinAction1(InputValue value)
+    {
+        join1 = value.isPressed;
+        Join();
+    }
+
+    void OnJoinAction2(InputValue value)
+    {
+        join2 = value.isPressed;
+        Join();
+    }
+
+    void Join()
+    {
+        if (!(join1 && join2))
+        {
+            return;
+        }
+
         PlayerNumber = FindObjectOfType<PlayerRegistry>().RegisterPlayer(gameObject);
         PlayerColor = playerColors[PlayerNumber];
         gameObject.name = "Player" + (PlayerNumber);
         DontDestroyOnLoad(gameObject);
 
         _initialSceneName = SceneManager.GetActiveScene().name;
-    }
-
-    // Update is called once per frame
-    void OnDestroy()
-    {
-        FindObjectOfType<PlayerRegistry>().DeregisterPlayer(PlayerNumber);
     }
 
     void OnStartButton()

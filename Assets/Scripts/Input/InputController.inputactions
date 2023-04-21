@@ -6,6 +6,33 @@
             "id": "63c4e2dd-28f8-48c6-be7a-ab3a8935fa42",
             "actions": [
                 {
+                    "name": "JoinAction1",
+                    "type": "Value",
+                    "id": "57db5f06-7bc1-4529-ba74-2c11aaf7d144",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=1)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoinAction2",
+                    "type": "Value",
+                    "id": "c7520050-dfa0-4131-a18c-5e48f5d393c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=1)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StartButton",
+                    "type": "Button",
+                    "id": "b38d2b70-eb82-49dc-843f-833b0d4e9204",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "59dcac1d-9869-49e4-9ad3-5652c750e1c2",
@@ -31,24 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "StartButton",
-                    "type": "Button",
-                    "id": "b38d2b70-eb82-49dc-843f-833b0d4e9204",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Submit",
-                    "type": "Button",
-                    "id": "bebda19c-646e-4bea-bcda-b47b9c39c777",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -120,12 +129,12 @@
                 },
                 {
                     "name": "",
-                    "id": "446cc21e-3684-4e15-b969-9ebdd8e832ba",
-                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button10",
+                    "id": "10df4ca6-f7f0-4ffb-ae02-94a877e987b0",
+                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "StartButton",
+                    "action": "JoinAction1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -142,8 +151,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b1ce3e25-9676-4002-9a93-a8191c7c54b7",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "446cc21e-3684-4e15-b969-9ebdd8e832ba",
+                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button10",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -153,23 +162,12 @@
                 },
                 {
                     "name": "",
-                    "id": "be98d3b4-635b-40ca-821e-f429579b9543",
-                    "path": "<Joystick>/stick/left",
+                    "id": "2499c634-5b00-47a2-a804-f4f739e127da",
+                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button8",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a75d4eaf-1618-4afd-a41d-866b68959fa7",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Submit",
+                    "action": "JoinAction2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
