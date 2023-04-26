@@ -17,14 +17,47 @@ namespace Assets.Scripts.UI
         // Use this for initialization
         void Start()
         {
+            //Time.timeScale = 0;
             _count = Instantiate(UIPrefab, FindObjectOfType<Canvas>().transform);
-            _count.fontSize = 50;
+            _count.fontSize = 400;
             _count.color = Color.Lerp(Color.red, Color.white, 0.5f);
+            _count.text = "180.00";
+
+            _count.GetComponent<RectTransform>().sizeDelta = new Vector2(10000, 300);
+
+            _count.GetComponent<RectTransform>().anchorMin = new(0.5f, 0.5f);
+            _count.GetComponent<RectTransform>().anchorMax = new(0.5f, 0.5f);
+            _count.GetComponent<RectTransform>().pivot = new(0.5f, 0.5f);
+
+           // StartCoroutine(go());
+        }
+
+
+        IEnumerator go()
+        {
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = !_count.GetComponent<TextMeshPro>().enabled;
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = !_count.GetComponent<TextMeshPro>().enabled;
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = !_count.GetComponent<TextMeshPro>().enabled;
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = !_count.GetComponent<TextMeshPro>().enabled;
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = !_count.GetComponent<TextMeshPro>().enabled;
+            yield return new WaitForSecondsRealtime(0.3f);
+            _count.GetComponent<TextMeshPro>().enabled = true;
+            Time.timeScale = 1;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (Time.timeScale == 0)
+            {
+                return;
+            }
+
             _count.GetComponent<RectTransform>().anchorMin = new(0.5f, 1f);
             _count.GetComponent<RectTransform>().anchorMax = new(0.5f, 1f);
             _count.GetComponent<RectTransform>().pivot = new(0.5f, 1f);
