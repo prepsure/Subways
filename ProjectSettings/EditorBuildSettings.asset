@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TrainRails.unity
     guid: 3af7dbb3dd4e07743a4e79361f16e663
   - enabled: 1
-    path: Assets/Scenes/TestRails.unity
+    path: Assets/Scenes/Old/TestRails.unity
     guid: 5311c8a3a1e814d408efad8348746c90
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 757cb969204d718498cde21b335e7c6e, type: 2}
