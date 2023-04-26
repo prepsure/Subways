@@ -14,7 +14,7 @@ public class TrainInstantiator : MonoBehaviour
             .ForEach(t => {
                 GameObject train = t.MakeTrain();
 
-                train.GetComponent<Renderer>().materials[0].color = t.GetComponent<PlayerController>().PlayerColor;
+                train.GetComponent<TrainColor>().ColorRender.materials[1].color = t.GetComponent<PlayerController>().PlayerColor;
 
                 train.GetComponent<DisplayTrainPassengerCount>().PlayerNum = t.GetComponent<PlayerController>().PlayerNumber;
 

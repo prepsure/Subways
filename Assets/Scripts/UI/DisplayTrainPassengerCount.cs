@@ -34,7 +34,7 @@ namespace Assets.Scripts.UI
             //_passengerCount.color = Color.Lerp(_trainStats.gameObject.GetComponent<Renderer>().materials[0].color, Color.white, 0.5f);
 
             _score = Instantiate(UIPrefab, FindObjectOfType<Canvas>().transform);
-            _score.fontSize = 60;
+            _score.fontSize = 130;
             //_score.color = Color.Lerp(_trainStats.gameObject.GetComponent<Renderer>().materials[0].color, Color.white, 0.5f);
         }
 

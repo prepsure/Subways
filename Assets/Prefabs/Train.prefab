@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: -1206590438771712044}
   - component: {fileID: 7167386533043734476}
   - component: {fileID: 8803084315138593200}
+  - component: {fileID: 6131369312667444079}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -236,6 +237,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowPrefab: {fileID: 4937087826618015781, guid: c74e57e462aaec34d87ce299b4fc63b3, type: 3}
+--- !u!114 &6131369312667444079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367303348641311962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f3b880dd75a524a888c7519909d43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorRender: {fileID: 7227909325107486913}
 --- !u!1 &8570880276223648365
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +391,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: d77450635ae5ebe41ac24ad53adc23c3, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d77450635ae5ebe41ac24ad53adc23c3, type: 3}
       propertyPath: m_Name
       value: TrainEngine
@@ -386,5 +404,10 @@ PrefabInstance:
 --- !u!4 &6684551125900710373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d77450635ae5ebe41ac24ad53adc23c3, type: 3}
+  m_PrefabInstance: {fileID: 6579462910354044430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7227909325107486913 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4683669308469848369, guid: d77450635ae5ebe41ac24ad53adc23c3, type: 3}
   m_PrefabInstance: {fileID: 6579462910354044430}
   m_PrefabAsset: {fileID: 0}
