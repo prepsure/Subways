@@ -33,13 +33,15 @@ public class SplineDecorator : MonoBehaviour
 			for (int i = 0; i < items.Length; i++, p++)
 			{
 				Transform item = Instantiate(items[i]);
-				Vector3 position = spline.GetPoint(spline.DistanceToT(p * stepSize));
-				item.transform.localPosition = position;
+				Vector3 position = spline.GetPoint(p * stepSize);
+				
+				item.transform.position = position;
+
 				if (lookForward)
 				{
-					item.transform.LookAt(position + spline.GetDirection(spline.DistanceToT(p * stepSize)));
+					item.transform.LookAt(position + spline.GetDirection(p * stepSize));
 				}
-				item.transform.parent = transform;
+				//item.transform.parent = transform;
 			}
 		}
 	}

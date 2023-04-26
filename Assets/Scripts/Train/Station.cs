@@ -5,10 +5,11 @@ using UnityEngine;
 public class Station : MonoBehaviour
 {
     public int MaxPassengersWaiting;
-    public int MaxTimeUntilDestinationSwitch;
+    public float PassengersWaiting;
 
-    public int PassengersWaiting;
-    public int TimeUntilDestinationSwitch;
+    public bool isDropOff;
+
+    public float PassengerArrivalRate;
 
     // Start is called before the first frame update
     void Start()
@@ -19,52 +20,34 @@ public class Station : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    //When train is x distance from station, unload passengers and increment score
-/*    float stationDistance;
-
-    float x;
-
-    int trainPassengers;
-
-    int waitingPassengers;
-
-    int placeholder;
-
-    if (stationDistance <= x)
-    {
-        placeholder = trainPassengers;
-        trainPassengers = (trainPassengers + waitingPassengers);
-        waitingPassengers = placeholder;
-        playerScore = (waitingPassengers * 100); 
-    }
-*/
-
-    //Add y number of passengers at each station
-/*    int[] stations = new int[8];
-
-    for (int[] j = 0; j < 8; j++)
-    {
-        Random.Range(1,10);
-    }
-*/
-
-    //Check for train capacity
-/*    int trainMax = 100;
-
-    int passTotal = 0;
-
-    Check
-    {
-        if (passTotal >= trainMax)
+        if (!isDropOff)
         {
-            Console.WriteLine("Your train is full");
-        }
-        else {
-            passTotal++;
+            float passengersPerUpdate = Time.deltaTime * PassengerArrivalRate;
+
+            PassengersWaiting += passengersPerUpdate;
+
+            PassengersWaiting = Mathf.Min(PassengersWaiting, MaxPassengersWaiting);
         }
     }
-*/
+
+    public float PickUp(float pickupRate)
+    {
+        if (PassengersWaiting < Time.deltaTime * pickupRate)
+        {
+            return 0;
+        }
+
+        float passengersPickedUp = Time.deltaTime * pickupRate;
+        PassengersWaiting -= passengersPickedUp;
+
+        return passengersPickedUp;
+    }
+
+    public float DropOff(float dropOffRate)
+    {
+        float passengersDroppedOff = Time.deltaTime * dropOffRate;
+        PassengersWaiting += passengersDroppedOff;
+
+        return passengersDroppedOff;
+    }
 }

@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 public class TrainController : MonoBehaviour
 {
     public GameObject TrainPrefab;
-    private GameObject myTrain;
+
+    private GameObject _myTrain;
 
     private float _speedMultiplier1 = 1;
     private float _speedMultiplier2 = 1;
@@ -18,16 +19,17 @@ public class TrainController : MonoBehaviour
     }
     public Vector3 IdealWorldDirection = Vector3.zero;
 
-    public GameObject MakeTrain(Color c)
+    public GameObject MakeTrain()
     {
-        myTrain = Instantiate(TrainPrefab);
-        myTrain.GetComponent<Renderer>().materials[0].color = c;
-        return myTrain;
+        _myTrain = Instantiate(TrainPrefab);
+
+        return _myTrain;
     }
 
     void OnMove(InputValue val)
     {
         Vector2 rawInput = val.Get<Vector2>();
+        Debug.Log(rawInput);
 
         IdealWorldDirection = FindObjectOfType<Camera>().transform
             .TransformDirection(new Vector3(rawInput.x, rawInput.y, 0));
@@ -45,12 +47,12 @@ public class TrainController : MonoBehaviour
 
     private void Update()
     {
-        if (myTrain == null)
+        if (_myTrain == null)
         {
             return;
         }
 
-        TrainMovement movement = myTrain.GetComponent<TrainMovement>();
+        TrainMovement movement = _myTrain.GetComponent<TrainMovement>();
 
         movement.TravelSpeed = movement.MaxTravelSpeed * SpeedMultiplier;
         movement.IdealTurningDirection = IdealWorldDirection;

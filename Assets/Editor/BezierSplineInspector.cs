@@ -93,7 +93,7 @@ public class BezierSplineInspector : Editor {
 		}
 
 		ShowAllLines();
-		//ShowDirections();
+		ShowDirections();
 	}
 
 	private void ShowDirections () {

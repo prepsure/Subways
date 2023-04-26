@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrainPrefab: {fileID: 6367303348641311962, guid: e63f8d9cde3338544bd241301784c68f, type: 3}
+  ArrowPrefab: {fileID: 921449719629921854, guid: a00866beca6f3ef439099e5a50c43e88, type: 3}
   IdealWorldDirection: {x: 0, y: 0, z: 0}

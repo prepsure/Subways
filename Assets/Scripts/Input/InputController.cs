@@ -28,6 +28,33 @@ public partial class @InputController : IInputActionCollection2, IDisposable
             ""id"": ""63c4e2dd-28f8-48c6-be7a-ab3a8935fa42"",
             ""actions"": [
                 {
+                    ""name"": ""JoinAction1"",
+                    ""type"": ""Value"",
+                    ""id"": ""57db5f06-7bc1-4529-ba74-2c11aaf7d144"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""JoinAction2"",
+                    ""type"": ""Value"",
+                    ""id"": ""c7520050-dfa0-4131-a18c-5e48f5d393c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""StartButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""b38d2b70-eb82-49dc-843f-833b0d4e9204"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""59dcac1d-9869-49e4-9ad3-5652c750e1c2"",
@@ -53,24 +80,6 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""StartButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""b38d2b70-eb82-49dc-843f-833b0d4e9204"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Submit"",
-                    ""type"": ""Button"",
-                    ""id"": ""bebda19c-646e-4bea-bcda-b47b9c39c777"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""36cec8f9-4332-4e7e-b424-7945082138ce"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b285010-b3e0-46ef-97ea-a4dd964c9ed3"",
                     ""path"": ""<Joystick>/stick"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -120,6 +140,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""60fc339e-4766-4bc6-bfd1-a153a2ffe064"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slowdown1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""333926e7-19b3-47e1-9031-3f62453cd053"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
@@ -142,12 +173,45 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""446cc21e-3684-4e15-b969-9ebdd8e832ba"",
-                    ""path"": ""<HID::Logitech Logitech RumblePad 2 USB>/button10"",
+                    ""id"": ""a0d51ab4-6f26-4a0e-bca8-b3fdf3541d0f"",
+                    ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""StartButton"",
+                    ""action"": ""Slowdown2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10df4ca6-f7f0-4ffb-ae02-94a877e987b0"",
+                    ""path"": ""<HID::Logitech Logitech RumblePad 2 USB>/button7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f9b2486-7a4a-42b6-b34c-6627f27776a8"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea495771-7883-4b1c-b723-1bc8bebe6ce6"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -164,23 +228,56 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""be98d3b4-635b-40ca-821e-f429579b9543"",
-                    ""path"": ""<Joystick>/stick/left"",
+                    ""id"": ""446cc21e-3684-4e15-b969-9ebdd8e832ba"",
+                    ""path"": ""<HID::Logitech Logitech RumblePad 2 USB>/button10"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Submit"",
+                    ""action"": ""StartButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a75d4eaf-1618-4afd-a41d-866b68959fa7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""26071c2a-9fa5-4b2a-9ed9-7ce941818cea"",
+                    ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Submit"",
+                    ""action"": ""StartButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2499c634-5b00-47a2-a804-f4f739e127da"",
+                    ""path"": ""<HID::Logitech Logitech RumblePad 2 USB>/button8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c004055-8fc5-4a71-9f23-f5458d530367"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc917b46-4bd9-4d68-b9dd-7b4720c61897"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinAction2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -191,11 +288,12 @@ public partial class @InputController : IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_JoinAction1 = m_Player.FindAction("JoinAction1", throwIfNotFound: true);
+        m_Player_JoinAction2 = m_Player.FindAction("JoinAction2", throwIfNotFound: true);
+        m_Player_StartButton = m_Player.FindAction("StartButton", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Slowdown1 = m_Player.FindAction("Slowdown1", throwIfNotFound: true);
         m_Player_Slowdown2 = m_Player.FindAction("Slowdown2", throwIfNotFound: true);
-        m_Player_StartButton = m_Player.FindAction("StartButton", throwIfNotFound: true);
-        m_Player_Submit = m_Player.FindAction("Submit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -255,20 +353,22 @@ public partial class @InputController : IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_JoinAction1;
+    private readonly InputAction m_Player_JoinAction2;
+    private readonly InputAction m_Player_StartButton;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Slowdown1;
     private readonly InputAction m_Player_Slowdown2;
-    private readonly InputAction m_Player_StartButton;
-    private readonly InputAction m_Player_Submit;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
         public PlayerActions(@InputController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @JoinAction1 => m_Wrapper.m_Player_JoinAction1;
+        public InputAction @JoinAction2 => m_Wrapper.m_Player_JoinAction2;
+        public InputAction @StartButton => m_Wrapper.m_Player_StartButton;
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Slowdown1 => m_Wrapper.m_Player_Slowdown1;
         public InputAction @Slowdown2 => m_Wrapper.m_Player_Slowdown2;
-        public InputAction @StartButton => m_Wrapper.m_Player_StartButton;
-        public InputAction @Submit => m_Wrapper.m_Player_Submit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +378,15 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
+                @JoinAction1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction1;
+                @JoinAction1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction1;
+                @JoinAction1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction1;
+                @JoinAction2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction2;
+                @JoinAction2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction2;
+                @JoinAction2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinAction2;
+                @StartButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
+                @StartButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
+                @StartButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
                 @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
@@ -287,16 +396,19 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @Slowdown2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
                 @Slowdown2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
                 @Slowdown2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
-                @StartButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
-                @StartButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
-                @StartButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStartButton;
-                @Submit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
-                @Submit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
-                @Submit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSubmit;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @JoinAction1.started += instance.OnJoinAction1;
+                @JoinAction1.performed += instance.OnJoinAction1;
+                @JoinAction1.canceled += instance.OnJoinAction1;
+                @JoinAction2.started += instance.OnJoinAction2;
+                @JoinAction2.performed += instance.OnJoinAction2;
+                @JoinAction2.canceled += instance.OnJoinAction2;
+                @StartButton.started += instance.OnStartButton;
+                @StartButton.performed += instance.OnStartButton;
+                @StartButton.canceled += instance.OnStartButton;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -306,22 +418,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @Slowdown2.started += instance.OnSlowdown2;
                 @Slowdown2.performed += instance.OnSlowdown2;
                 @Slowdown2.canceled += instance.OnSlowdown2;
-                @StartButton.started += instance.OnStartButton;
-                @StartButton.performed += instance.OnStartButton;
-                @StartButton.canceled += instance.OnStartButton;
-                @Submit.started += instance.OnSubmit;
-                @Submit.performed += instance.OnSubmit;
-                @Submit.canceled += instance.OnSubmit;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
+        void OnJoinAction1(InputAction.CallbackContext context);
+        void OnJoinAction2(InputAction.CallbackContext context);
+        void OnStartButton(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnSlowdown1(InputAction.CallbackContext context);
         void OnSlowdown2(InputAction.CallbackContext context);
-        void OnStartButton(InputAction.CallbackContext context);
-        void OnSubmit(InputAction.CallbackContext context);
     }
 }
