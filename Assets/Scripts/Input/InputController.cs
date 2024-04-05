@@ -80,6 +80,15 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ec163f1-e048-4b4f-8364-1c984acb9bfc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -280,6 +289,17 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                     ""action"": ""JoinAction2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8030dc0-7805-4d04-850d-fb6ce17e4923"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -294,6 +314,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Slowdown1 = m_Player.FindAction("Slowdown1", throwIfNotFound: true);
         m_Player_Slowdown2 = m_Player.FindAction("Slowdown2", throwIfNotFound: true);
+        m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -359,6 +380,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Slowdown1;
     private readonly InputAction m_Player_Slowdown2;
+    private readonly InputAction m_Player_Restart;
     public struct PlayerActions
     {
         private @InputController m_Wrapper;
@@ -369,6 +391,7 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Slowdown1 => m_Wrapper.m_Player_Slowdown1;
         public InputAction @Slowdown2 => m_Wrapper.m_Player_Slowdown2;
+        public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -396,6 +419,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @Slowdown2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
                 @Slowdown2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
                 @Slowdown2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSlowdown2;
+                @Restart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRestart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -418,6 +444,9 @@ public partial class @InputController : IInputActionCollection2, IDisposable
                 @Slowdown2.started += instance.OnSlowdown2;
                 @Slowdown2.performed += instance.OnSlowdown2;
                 @Slowdown2.canceled += instance.OnSlowdown2;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
             }
         }
     }
@@ -430,5 +459,6 @@ public partial class @InputController : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnSlowdown1(InputAction.CallbackContext context);
         void OnSlowdown2(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

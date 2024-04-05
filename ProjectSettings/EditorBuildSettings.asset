@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TrainRails.unity
     guid: 3af7dbb3dd4e07743a4e79361f16e663
   - enabled: 1
+    path: Assets/Scenes/ExitScreen.unity
+    guid: 3c948fa16c01b984dafdadfbc6fb12f7
+  - enabled: 0
     path: Assets/Scenes/Old/TestRails.unity
     guid: 5311c8a3a1e814d408efad8348746c90
   m_configObjects:

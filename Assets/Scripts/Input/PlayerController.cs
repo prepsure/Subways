@@ -40,6 +40,19 @@ public class PlayerController : MonoBehaviour
         Join();
     }
 
+    void OnRestart(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            foreach (var obj in FindObjectsOfType<GameObject>())
+            {
+                Destroy(obj);
+            }
+
+            SceneManager.LoadScene("JoinScreen");
+        }
+    }
+
     void Join()
     {
         if (!(join1 && join2))
@@ -57,14 +70,16 @@ public class PlayerController : MonoBehaviour
 
     void OnStartButton()
     {
+        Debug.Log("Start");
+
         if (SceneManager.GetActiveScene().name != _initialSceneName)
         {
             Debug.Log(SceneManager.GetActiveScene().name);
             return;
         }
 
-        SceneManager.LoadScene("TrainRails", LoadSceneMode.Single);
-        //StartCoroutine(ChangeScenes());
+        //SceneManager.LoadScene("TrainRails", LoadSceneMode.Single);
+        StartCoroutine(ChangeScenes());
     }
 
     IEnumerator ChangeScenes()
@@ -72,7 +87,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("Instructions_1", LoadSceneMode.Single);
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Instructions_2", LoadSceneMode.Single);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         SceneManager.LoadScene("TrainRails", LoadSceneMode.Single);
     }
 }
